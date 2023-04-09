@@ -1,6 +1,7 @@
 package de.kecksbelit.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import de.kecksbelit.tutorialmod.block.ModBlocks;
 import de.kecksbelit.tutorialmod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,6 +21,7 @@ public class Tutorialmod {
     public Tutorialmod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
