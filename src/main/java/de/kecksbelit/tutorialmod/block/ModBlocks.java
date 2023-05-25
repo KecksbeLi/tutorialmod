@@ -1,6 +1,7 @@
 package de.kecksbelit.tutorialmod.block;
 
 import de.kecksbelit.tutorialmod.Tutorialmod;
+import de.kecksbelit.tutorialmod.block.custom.JumpyBlock;
 import de.kecksbelit.tutorialmod.item.ModCreativeModeTab;
 import de.kecksbelit.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -25,6 +26,7 @@ public class ModBlocks
 
     public static final RegistryObject<Block> ZIRCON_ORE = registerBlock("zircon_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(6F).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
 
+    public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block", () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6F).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
 
     public static final RegistryObject<Block> DEEPSLATE_ZIRCON_ORE = registerBlock("deepslate_zircon_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(6F).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
 
