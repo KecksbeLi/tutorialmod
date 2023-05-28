@@ -1,8 +1,6 @@
 package de.kecksbelit.tutorialmod.block.custom;
 
-import ca.weblite.objc.Client;
-import de.kecksbelit.tutorialmod.item.ModCreativeModeTab;
-import net.minecraft.client.multiplayer.ClientLevel;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
