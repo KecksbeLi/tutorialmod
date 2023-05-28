@@ -2,6 +2,7 @@ package de.kecksbelit.tutorialmod.block;
 
 import de.kecksbelit.tutorialmod.Tutorialmod;
 import de.kecksbelit.tutorialmod.block.custom.JumpyBlock;
+import de.kecksbelit.tutorialmod.block.custom.ZirconLampBlock;
 import de.kecksbelit.tutorialmod.item.ModCreativeModeTab;
 import de.kecksbelit.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -30,6 +31,7 @@ public class ModBlocks
 
     public static final RegistryObject<Block> DEEPSLATE_ZIRCON_ORE = registerBlock("deepslate_zircon_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.HEAVY_METAL).strength(6F).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
 
+    public static final RegistryObject<Block> ZIRCON_LAMP = registerBlock("zircon_lamp", () -> new ZirconLampBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6F).requiresCorrectToolForDrops().lightLevel(state -> state.getValue(ZirconLampBlock.LIT) ? 15 : 0)), ModCreativeModeTab.TUTORIAL_TAB);
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab)
     {
         RegistryObject<T> registryBlock = BLOCKS.register(name, block);
