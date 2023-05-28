@@ -3,6 +3,8 @@ package de.kecksbelit.tutorialmod;
 import com.mojang.logging.LogUtils;
 import de.kecksbelit.tutorialmod.block.ModBlocks;
 import de.kecksbelit.tutorialmod.item.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -33,6 +35,7 @@ public class Tutorialmod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.Blueberry_Crop.get(), RenderType.cutout());
         }
     }
 }
