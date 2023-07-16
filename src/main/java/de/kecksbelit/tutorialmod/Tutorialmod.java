@@ -3,6 +3,7 @@ package de.kecksbelit.tutorialmod;
 import com.mojang.logging.LogUtils;
 import de.kecksbelit.tutorialmod.block.ModBlocks;
 import de.kecksbelit.tutorialmod.item.ModItems;
+import de.kecksbelit.tutorialmod.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,12 +25,17 @@ public class Tutorialmod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModVillagers.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(() ->
+        {
+            ModVillagers.registerPOIs();
+        });
     }
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents {
