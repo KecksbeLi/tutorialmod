@@ -16,14 +16,18 @@ public class EightBallItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-
         if(!pLevel.isClientSide() && pUsedHand == InteractionHand.MAIN_HAND)
         {
+
             randomNumberOutput(pPlayer);
             pPlayer.getCooldowns().addCooldown(this, 20);
         }
+
         return super.use(pLevel, pPlayer, pUsedHand);
     }
+
+
+
 
     private void randomNumberOutput(Player player)
     {

@@ -1,7 +1,7 @@
 {
   "item.tutorialmod.zircon" : "Zircon",
   "item.tutorialmod.eight_ball" : "Eight Ball",
-
+  "item.tutorialmod.iceboat_item": "Ice Boat",
   "block.tutorialmod.zircon_block" : "Zircon Block",
   "block.tutorialmod.zircon_ore" : "Zircon Ore",
   "block.tutorialmod.deepslate_zircon_ore" : "Deepslate Zircon Ore",
