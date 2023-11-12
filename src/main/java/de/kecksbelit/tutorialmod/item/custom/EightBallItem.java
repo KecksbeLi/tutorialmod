@@ -28,7 +28,6 @@ public class EightBallItem extends Item {
 
 
 
-
     private void randomNumberOutput(Player player)
     {
         player.sendSystemMessage(Component.literal("Your Number is" + getRandomNumber()));
