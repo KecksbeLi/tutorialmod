@@ -2,6 +2,7 @@ package de.kecksbelit.tutorialmod.entity;
 
 
 import de.kecksbelit.tutorialmod.Tutorialmod;
+import de.kecksbelit.tutorialmod.entity.custom.DiamondWandProjectile;
 import de.kecksbelit.tutorialmod.entity.custom.IceBoatEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -21,6 +22,11 @@ public class ModEntityTypes {
                             .sized(1.5f, 0.6f)
                             .build(new ResourceLocation(Tutorialmod.MOD_ID, "ice_boat").toString()));
 
+
+    public static final RegistryObject<EntityType<DiamondWandProjectile>> DIAMOND_WAND_ENTITY = ENTITY_TYPES.register("diamond_wand_entity",
+            () -> EntityType.Builder.of(DiamondWandProjectile::new, MobCategory.MISC)
+                    .sized(0.2f, 0.2f) // Set the size of your projectile
+                    .build(new ResourceLocation(Tutorialmod.MOD_ID, "diamond_wand_projectile").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

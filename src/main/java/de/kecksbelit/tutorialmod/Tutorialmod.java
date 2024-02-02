@@ -3,6 +3,7 @@ package de.kecksbelit.tutorialmod;
 import com.mojang.logging.LogUtils;
 import de.kecksbelit.tutorialmod.block.ModBlocks;
 import de.kecksbelit.tutorialmod.entity.ModEntityTypes;
+import de.kecksbelit.tutorialmod.entity.client.DiamondWandProjectileRenderer;
 import de.kecksbelit.tutorialmod.entity.client.IceBoatRenderer;
 import de.kecksbelit.tutorialmod.item.ModCreativeModeTab;
 import de.kecksbelit.tutorialmod.item.ModItems;
@@ -75,8 +76,10 @@ public class Tutorialmod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.Blueberry_Crop.get(), RenderType.cutout());
             EntityRenderers.register(ModEntityTypes.ICEBOAT.get(), IceBoatRenderer::new);
+            EntityRenderers.register(ModEntityTypes.DIAMOND_WAND_ENTITY.get(), DiamondWandProjectileRenderer::new);
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.Blueberry_Crop.get(), RenderType.cutout());
+
         }
     }
 }
